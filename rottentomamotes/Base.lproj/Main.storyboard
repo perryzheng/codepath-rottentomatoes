@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6239"/>
     </dependencies>
     <scenes>
-        <!--Movies View Controller-->
+        <!--Movies-->
         <scene sceneID="H7L-hg-ETF">
             <objects>
                 <viewController id="UH1-ob-pJU" customClass="MoviesViewController" customModule="rottentomamotes" customModuleProvider="target" sceneMemberID="viewController">
@@ -54,7 +54,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ohV-ZT-M8w"/>
+                    <navigationItem key="navigationItem" title="Movies" id="ohV-ZT-M8w"/>
                     <connections>
                         <outlet property="moviesTableView" destination="MAz-Bv-Noz" id="Htf-ds-DmY"/>
                     </connections>

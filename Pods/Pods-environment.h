@@ -48,3 +48,9 @@
 #define COCOAPODS_VERSION_MINOR_AFNetworking_UIKit 4
 #define COCOAPODS_VERSION_PATCH_AFNetworking_UIKit 1
 
+// RNActivityView
+#define COCOAPODS_POD_AVAILABLE_RNActivityView
+#define COCOAPODS_VERSION_MAJOR_RNActivityView 0
+#define COCOAPODS_VERSION_MINOR_RNActivityView 0
+#define COCOAPODS_VERSION_PATCH_RNActivityView 2
+

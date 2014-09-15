@@ -19,15 +19,20 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
         
-        var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=g6uyqf4fpfv62u74d53zd6hw&limit=20&country=us"
+//        self.view.showActivityViewWithLabel("Loading")
+//        self.view.hideActivityViewWithAfterDelay(2)
         
-        var request = NSURLRequest(URL: NSURL(string: url))
-        
-        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
-            (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
-            self.movies = object["movies"] as [NSDictionary]
-            self.moviesTableView.reloadData()
+        self.view.showActivityViewWithMode(RNActivityViewModeIndeterminate, label: "Loading", detailLabel: nil) {
+            var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=g6uyqf4fpfv62u74d53zd6hw&limit=20&country=us"
+            
+            var request = NSURLRequest(URL: NSURL(string: url))
+            
+            NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
+                (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+                var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
+                self.movies = object["movies"] as [NSDictionary]
+                self.moviesTableView.reloadData()
+            }
         }
     }
 
@@ -51,16 +56,11 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.titleLabel.text = movie["title"] as? String
         cell.synopsisLabel.text = movie["synopsis"] as? String
         
+        var posters = movie["posters"] as NSDictionary
+        var posterUrl = posters["thumbnail"] as String
+        
+        cell.posterImage.setImageWithURL(NSURL(string: posterUrl))
+        
         return cell
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

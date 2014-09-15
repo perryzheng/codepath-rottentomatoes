@@ -20,11 +20,14 @@ PODS:
   - AFNetworking/UIKit (2.4.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - RNActivityView (0.0.2)
 
 DEPENDENCIES:
   - AFNetworking
+  - RNActivityView
 
 SPEC CHECKSUMS:
   AFNetworking: 0aabc6fae66d6e5d039eeb21c315843c7aae51ab
+  RNActivityView: 4f2f07f7e93792326d09dc8407c2c6e89e3c0147
 
 COCOAPODS: 0.33.1
