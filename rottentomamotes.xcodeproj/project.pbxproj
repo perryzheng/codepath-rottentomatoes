@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		677FBC2BF55241EE9F6B5B8B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 701092030CD2464DA5F9F619 /* libPods.a */; };
+		F049351C19C7FB18009449B9 /* MovieDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F049351B19C7FB18009449B9 /* MovieDetailsViewController.swift */; };
 		F0BD0FD919C69816008DDC39 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD0FD819C69816008DDC39 /* AppDelegate.swift */; };
 		F0BD0FDE19C69816008DDC39 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0BD0FDC19C69816008DDC39 /* Main.storyboard */; };
 		F0BD0FE019C69816008DDC39 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0BD0FDF19C69816008DDC39 /* Images.xcassets */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		701092030CD2464DA5F9F619 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D602587CE0B343AFAE6E4B96 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		F049351B19C7FB18009449B9 /* MovieDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieDetailsViewController.swift; path = Controllers/MovieDetailsViewController.swift; sourceTree = "<group>"; };
 		F0788C1519C6B0CD006523FA /* rottentomamotes-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rottentomamotes-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0BD0FD319C69816008DDC39 /* rottentomamotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = rottentomamotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0BD0FD719C69816008DDC39 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				F0BD0FFC19C698F0008DDC39 /* MoviesViewController.swift */,
+				F049351B19C7FB18009449B9 /* MovieDetailsViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F049351C19C7FB18009449B9 /* MovieDetailsViewController.swift in Sources */,
 				F0BD0FD919C69816008DDC39 /* AppDelegate.swift in Sources */,
 				F0BD0FFD19C698F0008DDC39 /* MoviesViewController.swift in Sources */,
 				F0BD100119C69CA3008DDC39 /* MovieCell.swift in Sources */,
