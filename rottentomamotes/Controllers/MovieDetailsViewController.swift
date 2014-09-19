@@ -26,27 +26,9 @@ class MovieDetailsViewController: UIViewController {
         println("movie=\(movie)")
         
         self.textView.text = self.movie["synopsis"] as String
-        
-//        let thumbNailUrl = (self.movie["posters"] as NSDictionary)["thumbnail"] as String
-//        println("thumbNailUrl=\(thumbNailUrl)")
-//        let imageUrl = NSURL(string: thumbNailUrl)
-//        let nsData = NSData(contentsOfURL: imageUrl)
-//        self.imageView.image = UIImage(data: nsData)
-        
         self.imageView.image = preloadImage
-//        
-//        NSString *imageUrl = self.movieData[@"posters"][@"thumbnail"];
-//        NSURL *url = [NSURL URLWithString:imageUrl];
-//        NSData *imageData = [[NSData alloc] initWithContentsOfURL: url];
-//        self.moviePosterView.image = [UIImage imageWithData: imageData];
-//
-        //[self loadImage:[self.movieData valueForKeyPath:@"posters.original"] :self.moviePosterView];
-//        NSURL *url = [NSURL URLWithString:imageURL];
-//        
-//        [imageView setImageWithURL:url];
-        
+
         let originalUrl = (self.movie["posters"] as NSDictionary)["original"] as String
-        
         let url = NSURL(string: originalUrl.stringByReplacingOccurrencesOfString("tmb", withString: "ori", options: nil, range: nil))
         println("high res ur=\(url)")
         self.imageView.setImageWithURL(url)
