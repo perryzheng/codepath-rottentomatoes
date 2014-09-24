@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
@@ -38,10 +37,15 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let cell = sender as? MovieCell {
-            let indexPath = self.moviesTableView.indexPathForCell(cell)
-            let mdvc = segue.destinationViewController as MovieDetailsViewController
-            mdvc.movie = self.movies[indexPath!.row] as NSDictionary
-            mdvc.preloadImage = cell.posterImage!.image!
+            let indexPathOpt = self.moviesTableView.indexPathForCell(cell)
+            if let indexpath = indexPathOpt  {
+                if ((segue.identifier == "Show Movie")) {
+                    if let mdvc = segue.destinationViewController as? MovieDetailsViewController {
+                        mdvc.movie = self.movies[indexpath.row] as NSDictionary
+                        mdvc.preloadImage = cell.posterImage.image!
+                    }
+                }
+            }
         }
     }
     
@@ -62,15 +66,19 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func fetchDataAndupdateUI() {
         var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=g6uyqf4fpfv62u74d53zd6hw&limit=20&country=us"
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated:YES)
-        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         var request = NSURLRequest(URL: NSURL(string: url))
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
-            self.movies = object["movies"] as [NSDictionary]
-            self.moviesTableView.reloadData()
+            if (nil != error) {
+                println("got an error = \(error)")
+            } else {
+                var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
+                self.movies = object["movies"] as [NSDictionary]
+                self.moviesTableView.reloadData()
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
+            }
         }
     }
 }

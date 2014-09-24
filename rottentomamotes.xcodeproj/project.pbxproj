@@ -96,6 +96,7 @@
 		F0BD0FD519C69816008DDC39 /* rottentomamotes */ = {
 			isa = PBXGroup;
 			children = (
+				F0F269B019D1244100294D77 /* Model */,
 				F0BD0FFF19C69C61008DDC39 /* Views */,
 				F0BD0FFE19C698F6008DDC39 /* Controllers */,
 				F0BD0FD819C69816008DDC39 /* AppDelegate.swift */,
@@ -148,6 +149,13 @@
 				F0BD100019C69CA3008DDC39 /* MovieCell.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		F0F269B019D1244100294D77 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

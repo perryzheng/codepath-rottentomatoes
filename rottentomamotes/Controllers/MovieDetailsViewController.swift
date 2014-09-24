@@ -11,6 +11,8 @@ import UIKit
 class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textView: UITextView!
+    
+    
     @IBOutlet weak var scrollView: UIScrollView!
     var movie: NSDictionary = [:]
     var preloadImage: UIImage
@@ -30,21 +32,14 @@ class MovieDetailsViewController: UIViewController {
 
         let originalUrl = (self.movie["posters"] as NSDictionary)["original"] as String
         let url = NSURL(string: originalUrl.stringByReplacingOccurrencesOfString("tmb", withString: "ori", options: nil, range: nil))
-        println("high res ur=\(url)")
         self.imageView.setImageWithURL(url)
         
         let offset = CGFloat(350)
         let barHeight = self.navigationController?.toolbar.frame.size.height
-        println("frame.origin.y= \(self.view.frame.origin.y)")
-        println("self.view.frame.size.height = \(self.view.frame.size.height)")
-        println("bar height= \(barHeight)")
-        let scrollViewContentHeight = self.view.frame.origin.y + self.view.frame.size.height - barHeight! + offset
+        let scrollViewContentHeight = self.view.frame.origin.y + self.view.frame.size.height + offset - barHeight!
 
         scrollView.contentSize = CGSizeMake(self.view.frame.size.width, scrollViewContentHeight)
         scrollView.alwaysBounceVertical = true
-        
-        println("textView size= \(textView.frame.origin)")
-        
         textView.contentSize = CGSizeMake(320, 568)
         textView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
         textView.textColor = UIColor.whiteColor()
