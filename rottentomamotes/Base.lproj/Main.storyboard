@@ -87,8 +87,8 @@
                                         <rect key="frame" x="0.0" y="370" width="320" height="568"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toy Story (2014)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rQG-ug-YqU">
-                                                <rect key="frame" x="8" y="8" width="124" height="21"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Toy Story (2013)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="rQG-ug-YqU">
+                                                <rect key="frame" x="8" y="10" width="124" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -126,8 +126,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="YVz-OM-hME"/>
                     <connections>
+                        <outlet property="detailsView" destination="8fI-Qq-FcH" id="qAB-gL-gLa"/>
                         <outlet property="imageView" destination="W70-QJ-bdL" id="q5h-7p-Kut"/>
+                        <outlet property="mpaaLabel" destination="woJ-Nz-YwQ" id="bPc-aY-3sl"/>
+                        <outlet property="ratingsLabel" destination="Xro-aY-py3" id="Gvh-I8-9E0"/>
                         <outlet property="scrollView" destination="Z9u-as-Cw7" id="e9V-Xm-lDk"/>
+                        <outlet property="synopsisTextView" destination="Tqd-Dn-NvW" id="dG3-92-6B7"/>
+                        <outlet property="titleLabel" destination="rQG-ug-YqU" id="gaE-No-j7C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nyE-Gr-uvy" userLabel="First Responder" sceneMemberID="firstResponder"/>

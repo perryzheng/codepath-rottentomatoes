@@ -11,7 +11,7 @@ import UIKit
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var moviesTableView: UITableView!
-    var movies: [NSDictionary] = []
+    var movies: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +41,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if let indexpath = indexPathOpt  {
                 if ((segue.identifier == "Show Movie")) {
                     if let mdvc = segue.destinationViewController as? MovieDetailsViewController {
-                        mdvc.movie = self.movies[indexpath.row] as NSDictionary
+                        mdvc.movie = self.movies[indexpath.row]
                         mdvc.preloadImage = cell.posterImage.image!
                     }
                 }
@@ -51,14 +51,11 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("MovieCell") as MovieCell
-        var movie = movies[indexPath.row]
-        cell.titleLabel.text = movie["title"] as? String
-        cell.synopsisLabel.text = movie["synopsis"] as? String
         
-        var posters = movie["posters"] as NSDictionary
-        var posterUrl = posters["thumbnail"] as String
-        
-        cell.posterImage.setImageWithURL(NSURL(string: posterUrl))
+        var movie: Movie = movies[indexPath.row]
+        cell.titleLabel.text = movie.title
+        cell.synopsisLabel.text = movie.synopsis
+        cell.posterImage.setImageWithURL(NSURL(string: movie.thumbnailPosterUrl))
         
         return cell
     }
@@ -75,7 +72,8 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 println("got an error = \(error)")
             } else {
                 var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
-                self.movies = object["movies"] as [NSDictionary]
+                let movies = object["movies"] as [NSDictionary]
+                self.movies = Movie.initWithDictionary(movies)
                 self.moviesTableView.reloadData()
                 MBProgressHUD.hideHUDForView(self.view, animated: true)
             }
