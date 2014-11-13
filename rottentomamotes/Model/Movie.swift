@@ -9,15 +9,15 @@
 import Foundation
 
 public class Movie {
-    var title: String
-    var synopsis: String
-    var thumbnailPosterUrl: String
-    var originalPosterUrl: String
+    var title = String()
+    var synopsis = String()
+    var thumbnailPosterUrl = String()
+    var originalPosterUrl = String()
     
-    var mpaaRating: String
-    var criticsScore: Int
-    var audienceScore: Int
-    var year: Int
+    var mpaaRating = String()
+    var criticsScore = Int()
+    var audienceScore = Int()
+    var year = Int()
     
     init() {
     }
@@ -36,7 +36,7 @@ public class Movie {
     }
     
     class func initWithMoviesArray(dictionaries: [NSDictionary]) -> [Movie] {
-        let movies: [Movie] = [Movie]()
+        var movies: [Movie] = [Movie]()
         for dictionary: NSDictionary in dictionaries {
             var movie: Movie = Movie()
             movie.initWithDictionary(dictionary)
