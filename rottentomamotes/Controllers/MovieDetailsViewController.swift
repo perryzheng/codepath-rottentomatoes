@@ -26,9 +26,7 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         println("movie=\(movie)")
-        
         self.titleLabel.text = movie.title
         self.ratingsLabel.text = "Critics Score: \(movie.criticsScore), Audience Score: \(movie.audienceScore)"
         self.mpaaLabel.text = movie.mpaaRating
