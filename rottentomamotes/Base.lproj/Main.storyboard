@@ -50,7 +50,7 @@
                                             <outlet property="posterImage" destination="RXD-Y8-kqR" id="n8F-4d-opc"/>
                                             <outlet property="synopsisLabel" destination="Zg2-ok-7rP" id="OpL-AO-YuK"/>
                                             <outlet property="titleLabel" destination="zoC-sL-2Wq" id="gzd-vR-8y0"/>
-                                            <segue destination="Jgd-8Q-lsr" kind="push" identifier="&quot;Show Movie&quot;" id="yqt-mL-s7p"/>
+                                            <segue destination="Jgd-8Q-lsr" kind="push" identifier="Show Movie" id="yqt-mL-s7p"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -101,13 +101,6 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Critics Score: 80%, Audience Score 79%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xro-aY-py3">
-                                                <rect key="frame" x="8" y="32" width="316" height="21"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PG-13" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="woJ-Nz-YwQ">
                                                 <rect key="frame" x="8" y="56" width="50" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -115,14 +108,20 @@
                                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Tqd-Dn-NvW">
-                                                <rect key="frame" x="16" y="75" width="291" height="389"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Critics Score: 80%, Audience Score 79%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xro-aY-py3">
+                                                <rect key="frame" x="8" y="32" width="316" height="21"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                            </textView>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="synopsis" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vOY-Mc-z6D">
+                                                <rect key="frame" x="8" y="80" width="304" height="107"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" red="0.24299049950000001" green="1" blue="0.21989617850000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -138,7 +137,7 @@
                         <outlet property="mpaaLabel" destination="woJ-Nz-YwQ" id="bPc-aY-3sl"/>
                         <outlet property="ratingsLabel" destination="Xro-aY-py3" id="Gvh-I8-9E0"/>
                         <outlet property="scrollView" destination="Z9u-as-Cw7" id="e9V-Xm-lDk"/>
-                        <outlet property="synopsisTextView" destination="Tqd-Dn-NvW" id="dG3-92-6B7"/>
+                        <outlet property="synopsisLabel" destination="vOY-Mc-z6D" id="5ba-8u-hD3"/>
                         <outlet property="titleLabel" destination="rQG-ug-YqU" id="gaE-No-j7C"/>
                     </connections>
                 </viewController>

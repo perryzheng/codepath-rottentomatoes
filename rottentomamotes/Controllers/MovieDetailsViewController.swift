@@ -18,7 +18,7 @@ class MovieDetailsViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingsLabel: UILabel!
     @IBOutlet weak var mpaaLabel: UILabel!
-    @IBOutlet weak var synopsisTextView: UITextView!
+    @IBOutlet weak var synopsisLabel: UILabel!
     
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,11 +26,10 @@ class MovieDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        println("movie=\(movie)")
         self.titleLabel.text = movie.title
         self.ratingsLabel.text = "Critics Score: \(movie.criticsScore), Audience Score: \(movie.audienceScore)"
         self.mpaaLabel.text = movie.mpaaRating
-        self.synopsisTextView.text = movie.synopsis
+        self.synopsisLabel.text = movie.synopsis
         self.imageView.image = preloadImage
         self.imageView.setImageWithURL(NSURL(string: movie.originalPosterUrl))
         
@@ -42,13 +41,15 @@ class MovieDetailsViewController: UIViewController {
         scrollView.alwaysBounceVertical = true
         
         self.detailsView.sizeToFit() // snuggle into the main screen
+        self.synopsisLabel.sizeToFit()
+        self.synopsisLabel.numberOfLines = 0
         self.detailsView.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(0.6)
         
         // set different parts' colors
         self.titleLabel.textColor = UIColor.whiteColor()
         self.ratingsLabel.textColor = UIColor.whiteColor()
         self.mpaaLabel.textColor = UIColor.whiteColor()
-        self.synopsisTextView.textColor = UIColor.whiteColor()
+        self.synopsisLabel.textColor = UIColor.whiteColor()
     }
 
     override func didReceiveMemoryWarning() {

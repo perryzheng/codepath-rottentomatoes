@@ -39,7 +39,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         if let cell = sender as? MovieCell {
             let indexPathOpt = self.moviesTableView.indexPathForCell(cell)
             if let indexpath = indexPathOpt  {
-                if ((segue.identifier == "Show Movie")) {
+                if (segue.identifier == "Show Movie") {
                     if let mdvc = segue.destinationViewController as? MovieDetailsViewController {
                         mdvc.movie = self.movies[indexpath.row]
                         mdvc.preloadImage = cell.posterImage.image!
