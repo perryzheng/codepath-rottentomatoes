@@ -65,7 +65,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         // show loading state
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        var request = NSURLRequest(URL: NSURL(string: url))
+        var request = NSURLRequest(URL: NSURL(string: url)!)
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
