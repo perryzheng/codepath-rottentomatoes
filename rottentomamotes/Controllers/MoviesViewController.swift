@@ -10,15 +10,17 @@ import UIKit
 
 class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var networkerrorLabel: UILabel!
     @IBOutlet weak var moviesTableView: UITableView!
     var movies: [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        networkerrorLabel.hidden = true
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
-
+        
         self.fetchDataAndupdateUI()
     }
 
@@ -70,9 +72,10 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             if (nil != error) {
-                // show error message
+                self.networkerrorLabel.hidden = false
                 println("got an error = \(error)")
             } else {
+                self.networkerrorLabel.hidden = true
                 var object = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as NSDictionary
                 let movies = object["movies"] as [NSDictionary]
                 self.movies = Movie.initWithMoviesArray(movies)
