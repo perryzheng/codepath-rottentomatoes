@@ -57,7 +57,13 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         var movie: Movie = movies[indexPath.row]
         cell.titleLabel.text = movie.title
         cell.synopsisLabel.text = movie.synopsis
+        
+        // simulate fade in thumbnail images
+        cell.posterImage.alpha = 0
         cell.posterImage.setImageWithURL(NSURL(string: movie.thumbnailPosterUrl))
+        UIView.animateWithDuration(0.3, animations: {
+            cell.posterImage.alpha = 1
+        })
         
         return cell
     }
