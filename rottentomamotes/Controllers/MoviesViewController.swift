@@ -25,9 +25,18 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
         
-        self.fetchDataAndupdateUI()
+        fetchDataAndupdateUI()
+        addRefreshControl()
     }
 
+    func addRefreshControl() {
+        refreshControl = UIRefreshControl()
+        var attributedString = NSMutableAttributedString(string: "Pull down to refresh")
+        refreshControl.attributedTitle = attributedString
+        refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
+        moviesTableView.addSubview(refreshControl)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
