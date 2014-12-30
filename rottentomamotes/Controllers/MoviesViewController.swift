@@ -12,6 +12,10 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     @IBOutlet weak var networkerrorLabel: UILabel!
     @IBOutlet weak var moviesTableView: UITableView!
+    
+    // refresh controls 
+    var refreshControl: UIRefreshControl!
+    
     var movies: [Movie] = []
     
     override func viewDidLoad() {
@@ -61,6 +65,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // simulate fade in thumbnail images
         cell.posterImage.alpha = 0
         cell.posterImage.setImageWithURL(NSURL(string: movie.thumbnailPosterUrl))
+        // images fade in 
         UIView.animateWithDuration(0.3, animations: {
             cell.posterImage.alpha = 1
         })
@@ -78,6 +83,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             if (nil != error) {
+                // show network error
                 self.networkerrorLabel.hidden = false
                 println("got an error = \(error)")
             } else {

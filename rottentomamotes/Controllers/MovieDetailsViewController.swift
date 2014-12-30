@@ -30,6 +30,7 @@ class MovieDetailsViewController: UIViewController {
         self.ratingsLabel.text = "Critics Score: \(movie.criticsScore), Audience Score: \(movie.audienceScore)"
         self.mpaaLabel.text = movie.mpaaRating
         self.synopsisLabel.text = movie.synopsis
+        // show low res pic first, then load the high res pic
         self.imageView.image = preloadImage
         self.imageView.setImageWithURL(NSURL(string: movie.originalPosterUrl))
         
