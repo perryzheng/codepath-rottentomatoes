@@ -19,6 +19,9 @@
 		F0BD0FEF19C69817008DDC39 /* rottentomamotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD0FEE19C69817008DDC39 /* rottentomamotesTests.swift */; };
 		F0BD0FFD19C698F0008DDC39 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD0FFC19C698F0008DDC39 /* MoviesViewController.swift */; };
 		F0BD100119C69CA3008DDC39 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0BD100019C69CA3008DDC39 /* MovieCell.swift */; };
+		F0DA95781A536F3300F37432 /* boxoffice.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DA95761A536F3300F37432 /* boxoffice.png */; };
+		F0DA95791A536F3300F37432 /* dvd.png in Resources */ = {isa = PBXBuildFile; fileRef = F0DA95771A536F3300F37432 /* dvd.png */; };
+		F0DA957B1A5376CD00F37432 /* Notes in Resources */ = {isa = PBXBuildFile; fileRef = F0DA957A1A5376CD00F37432 /* Notes */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		F0BD0FEE19C69817008DDC39 /* rottentomamotesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = rottentomamotesTests.swift; sourceTree = "<group>"; };
 		F0BD0FFC19C698F0008DDC39 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoviesViewController.swift; path = Controllers/MoviesViewController.swift; sourceTree = "<group>"; };
 		F0BD100019C69CA3008DDC39 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MovieCell.swift; path = Views/MovieCell.swift; sourceTree = "<group>"; };
+		F0DA95761A536F3300F37432 /* boxoffice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boxoffice.png; sourceTree = "<group>"; };
+		F0DA95771A536F3300F37432 /* dvd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dvd.png; sourceTree = "<group>"; };
+		F0DA957A1A5376CD00F37432 /* Notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Notes; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 		F0BD0FCA19C69816008DDC39 = {
 			isa = PBXGroup;
 			children = (
+				F0DA957A1A5376CD00F37432 /* Notes */,
+				F0DA95741A536F0600F37432 /* Resources */,
 				F0981CF31A3AB1CA00D9EF16 /* README.md */,
 				F0BD0FD519C69816008DDC39 /* rottentomamotes */,
 				F0BD0FEB19C69817008DDC39 /* rottentomamotesTests */,
@@ -157,6 +165,23 @@
 				EE89C96E19D270E700B7B528 /* MovieDetailsView.swift */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		F0DA95741A536F0600F37432 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F0DA95751A536F0B00F37432 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F0DA95751A536F0B00F37432 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F0DA95761A536F3300F37432 /* boxoffice.png */,
+				F0DA95771A536F3300F37432 /* dvd.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		F0F269B019D1244100294D77 /* Model */ = {
@@ -249,7 +274,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0DA957B1A5376CD00F37432 /* Notes in Resources */,
+				F0DA95791A536F3300F37432 /* dvd.png in Resources */,
 				F0BD0FDE19C69816008DDC39 /* Main.storyboard in Resources */,
+				F0DA95781A536F3300F37432 /* boxoffice.png in Resources */,
 				F0BD0FE319C69817008DDC39 /* LaunchScreen.xib in Resources */,
 				F0BD0FE019C69816008DDC39 /* Images.xcassets in Resources */,
 			);

@@ -8,15 +8,20 @@
 
 import UIKit
 
-class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate {
+    var movies: [Movie] = []
+    var moviesTabSelected = true
+    
     @IBOutlet weak var networkerrorLabel: UILabel!
     @IBOutlet weak var moviesTableView: UITableView!
     
     // refresh controls 
     var refreshControl: UIRefreshControl!
     
-    var movies: [Movie] = []
+    // tab bar navigation controller
+    @IBOutlet weak var moviesTabBarItem: UITabBarItem!
+    @IBOutlet weak var dvdTabBarItem: UITabBarItem!
+    @IBOutlet weak var tabBar: UITabBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +53,18 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
+    }
+    
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
+        if (item.title == "Movies") {
+            moviesTabSelected = true
+            navigationItem.title = "Movies"
+            loadMovies()
+        } else if (item.title == "DVDs") {
+            moviesTabSelected = false
+            navigationItem.title = "DVDs"
+            loadDVDs()
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -82,13 +99,21 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func fetchDataAndupdateUI() {
+    func loadMovies() {
         var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/box_office.json?apikey=g6uyqf4fpfv62u74d53zd6hw&limit=20&country=us"
-        
+        fetchDataAndupdateUI(url)
+    }
+    
+    func loadDVDs() {
+        var url = "http://api.rottentomatoes.com/api/public/v1.0/lists/dvds/top_rentals.json?apikey=axku2sndnpg2d6dhjw59wj3d&page_limit=20&country=us"
+        fetchDataAndupdateUI(url)
+    }
+    
+    func fetchDataAndupdateUI(url: String) {
         // show loading state
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-        var request = NSURLRequest(URL: NSURL(string: url)!)
         
+        var request = NSURLRequest(URL: NSURL(string: url)!)
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue()) {
             (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             if (nil != error) {

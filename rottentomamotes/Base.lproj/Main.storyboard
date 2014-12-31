@@ -69,13 +69,26 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tabBar contentMode="scaleToFill" barStyle="black" id="l5x-zQ-Doc">
+                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Movies" image="boxoffice.png" id="b2X-6s-fRN"/>
+                                    <tabBarItem title="DVD" image="dvd.png" id="Do0-gf-baK"/>
+                                </items>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Movies" id="ohV-ZT-M8w"/>
                     <connections>
+                        <outlet property="dvdTabBarItem" destination="Do0-gf-baK" id="3U9-AA-2Zb"/>
+                        <outlet property="moviesTabBarItem" destination="b2X-6s-fRN" id="cyN-cI-Pb3"/>
                         <outlet property="moviesTableView" destination="MAz-Bv-Noz" id="Htf-ds-DmY"/>
                         <outlet property="networkerrorLabel" destination="vg7-Yy-zH4" id="j7w-AC-sXX"/>
+                        <outlet property="tabBar" destination="l5x-zQ-Doc" id="7md-G4-dU8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6AZ-pf-r06" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -172,6 +185,10 @@
             <point key="canvasLocation" x="224" y="-56"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="boxoffice.png" width="24" height="24"/>
+        <image name="dvd.png" width="24" height="24"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -1,0 +1,8 @@
+Create a tab bar
+1. Implement UITabBarProtocol
+2. Drag UITabBar to storyboard
+3. Change the tab bar item (use custom for System Item), and change color and tint to black
+4. Drag and make outlets tabbar, moviesTabItem, and dvdTabItem
+5. Implement the required method tabBar(tabBar:UITabBar, didSelectItem item:UITabBarItem!)
+6. Within the method, use item.title and use navigationItem which is a read-only variable of UIViewController
+7.
