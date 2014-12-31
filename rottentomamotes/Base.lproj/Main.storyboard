@@ -75,7 +75,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Movies" image="boxoffice.png" id="b2X-6s-fRN"/>
-                                    <tabBarItem title="DVD" image="dvd.png" id="Do0-gf-baK"/>
+                                    <tabBarItem title="DVDs" image="dvd.png" id="Do0-gf-baK"/>
                                 </items>
                                 <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </tabBar>

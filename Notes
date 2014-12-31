@@ -5,4 +5,5 @@ Create a tab bar
 4. Drag and make outlets tabbar, moviesTabItem, and dvdTabItem
 5. Implement the required method tabBar(tabBar:UITabBar, didSelectItem item:UITabBarItem!)
 6. Within the method, use item.title and use navigationItem which is a read-only variable of UIViewController
-7.
+7. Set tabBar.delegate to the movie controller (self)
+8.

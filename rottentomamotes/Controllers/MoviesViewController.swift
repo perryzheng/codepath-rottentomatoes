@@ -29,9 +29,11 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         networkerrorLabel.hidden = true
         moviesTableView.delegate = self
         moviesTableView.dataSource = self
+        tabBar.delegate = self
         
-        fetchDataAndupdateUI()
+        loadMovies()
         addRefreshControl()
+        customizeTabBar()
     }
 
     func addRefreshControl() {
@@ -40,6 +42,10 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         refreshControl.attributedTitle = attributedString
         refreshControl.addTarget(self, action: "refresh", forControlEvents: UIControlEvents.ValueChanged)
         moviesTableView.addSubview(refreshControl)
+    }
+    
+    func customizeTabBar() {
+        tabBar.selectedItem = moviesTabBarItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -57,10 +63,12 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
         if (item.title == "Movies") {
+            println("Movies")
             moviesTabSelected = true
             navigationItem.title = "Movies"
             loadMovies()
         } else if (item.title == "DVDs") {
+            println("DVDs")
             moviesTabSelected = false
             navigationItem.title = "DVDs"
             loadDVDs()
@@ -109,7 +117,7 @@ class MoviesViewController: UIViewController, UITableViewDelegate, UITableViewDa
         fetchDataAndupdateUI(url)
     }
     
-    func fetchDataAndupdateUI(url: String) {
+    private func fetchDataAndupdateUI(url: String) {
         // show loading state
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
